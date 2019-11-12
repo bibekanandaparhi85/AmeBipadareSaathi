@@ -1,0 +1,237 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="">
+  <div class="container">
+    <div class="row text-center bhfbbhe3">
+      <h2>Videos </h2>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<!-- youtube videos -->
+
+<!-- 21:9 aspect ratio -->
+
+<!-- <div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z9Tuu5J6G40" allowfullscreen></iframe>
+</div>
+<br> -->
+<div class="container-fluid text-center">
+<h2>Click <i class="fa fa-hand-o-down" style="font-size:48px;color:blue"></i>here to watch</h2>
+<p>If you are having problem to load videos, then check your intenet speed or firewall</p>
+
+<!-- Buttons -->
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/z9Tuu5J6G40">Watch Video 1</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/mV-pPlJXruY">Watch Video 2</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/HT-Iz4FdAo0">Watch Video 3</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/nIRrYWFmSn0">Watch Video 4</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/LB1b_9HY6AU">Watch Video 5</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/fMTkvMqq-QU">Watch Video 6</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/8o2YArtF3DM">Watch Video 7</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/v5jhHfTz4So">Watch Video 8</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/C6Rj_sRzwfE">Watch Video 9</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/NZsyPbewx1Y">Watch Video 10</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/zOvuCN5ERbc">Watch Video 11</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/B7AcQSKHqL0">Watch Video 12</button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-dark border-dark">
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body bg-dark p-0">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+    // Set iframe attributes when the show instance method is called
+    $("#videoModal").on("show.bs.modal", function(event) {
+        let button = $(event.relatedTarget); // Button that triggered the modal
+        let url = button.data("video");      // Extract url from data-video attribute
+        $(this).find("iframe").attr({
+            src : url,
+            allow : "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        });
+    });
+
+    // Remove iframe attributes when the modal has finished being hidden from the user
+    $("#videoModal").on("hidden.bs.modal", function() {
+        $("#videoModal iframe").removeAttr("src allow");
+    });
+});
+</script><br><br><br><br><br>
+
+
+
+
+
+
+<div id="fb-root"></div>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+  <!-- Your embedded video player code -->
+
+
+  <div class="fb-video" data-href="https://www.facebook.com/AmeBipadareSaathi/videos/614652065616030/" data-width="500" data-show-text="false">
+    <div class="fb-xfbml-parse-ignore">
+      <blockquote cite="https://www.facebook.com/AmeBipadareSaathi/videos/614652065616030/">
+        <a href=""></a>
+        <p>AmeBipadareSaathi</p>
+
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="fb-video" data-href="https://www.facebook.com/AmeBipadareSaathi/videos/630338694046888/" data-width="500" data-show-text="false">
+    <div class="fb-xfbml-parse-ignore">
+      <blockquote cite="https://www.facebook.com/AmeBipadareSaathi/videos/630338694046888/">
+        <a href="https://www.facebook.com/AmeBipadareSaathi/videos/630338694046888/">AmeBipadareSaathi</a>
+
+
+      </blockquote>
+    </div>
+  </div>
+
+
+  <div class="fb-video" data-href="" data-width="500" data-show-text="false">
+    <div class="fb-xfbml-parse-ignore">
+      <blockquote cite="">
+        <a href=""></a>
+        <p></p>
+        <a href="https://www.facebook.com/AmeBipadareSaathi/"></a>
+      </blockquote>
+    </div>
+  </div>
+
+
+  <div class="fb-video" data-href="https://www.facebook.com/AmeBipadareSaathi/videos/166046104294461/" data-width="500" data-show-text="false">
+    <div class="fb-xfbml-parse-ignore">
+      <blockquote cite="https://www.facebook.com/AmeBipadareSaathi/videos/166046104294461/">
+        <a href=""></a>
+        <p></p>
+        <a href="https://www.facebook.com/AmeBipadareSaathi/"></a>
+      </blockquote>
+    </div>
+  </div>
+
+
+    <div class="fb-video" data-href="https://www.facebook.com/AmeBipadareSaathi/videos/2501157760113040/" data-width="200" data-show-text="false">
+      <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/AmeBipadareSaathi/videos/2501157760113040/">
+          <a href=""></a>
+          <p></p>
+          <a href="https://www.facebook.com/AmeBipadareSaathi/"></a>
+        </blockquote>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="" id="fixed">
+  <img src="" alt="">
+</div>
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-30">
+            <h3>Our Mission</h3>
+            <p>**We are nonprofit team and continuously working on Education for every child, Feeding and Providing clothes to needy people, helping road accident victims, donating blood and many more **</p>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sm-mb-30">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="{% url 'main'%}">Home</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
+              <li><a href="{% url 'news'%}">News</a></li>
+              <li><a href="{% url 'gallery'%}">Gallery</a></li>
+              <li><a href="{% url 'videos'%}">Videos</a></li>
+              <li><a href="{% url 'post_list' %}">Opinion_Box</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
+            <h2>Follow Us</h2>
+            <p>Please Follow us on our Social Media profile in order to keep a Touchup</p>
+            <a href="https://www.facebook.com/AmeBipadareSaathi/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/amebipadaresaathi/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC8FPJ3WdipRb3amgXNn6u_g"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-four sm-mb-30">
+            <h2>Contact Us</h2>
+            <p><span class="glyphicon glyphicon-send"></span> Panikoili, Jajpur 755043<br>Once paper work is completed, Proper address we will notify you </p>
+            <p><span class="glyphicon glyphicon-phone"></span>8895045080<br> 9348387487 <br>  9937308537</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>amebipadaresaathi@gmail.com<br> rakeshranjanpanda92@gmail.com</p>
+            <p><span class="glyphicon glyphicon-tasks"></span> For website related issue :<br>bibekanandaparhi85@gmail.com</p>
+
+            <form class="" action="index.html" method="post">
+
+              <button  type="button" class="btn-outline-primary btn-sm"> <a href="{% url 'login' %}">JOIN WITH US</a></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom-text hudhd54d5">This Website is developed and maintained with <span class="glyphicon glyphicon-heart"></span> by <a href="https://www.facebook.com/bibekananda.parhi.7"><b>VIVEK</b></a> | Copyright ©2019 All rights reserved </p>
+</footer>
+
+{% endblock %}

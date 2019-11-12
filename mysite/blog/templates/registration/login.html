@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<div style="padding: 30px 20px 0px 20px">
+  <div class="jumbotron">
+
+    <h2>Please Login: </h2>
+    <h3>(For Guest User Put Username: guest and Password: help1234 )</h3>
+    <p>We are working on SignUp Option, it may take sometime. Sorry for the inconvenience</p>
+    {% if form.errors %}
+        <p>Your username and password didn't match.Please try again!</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" class='btn btn-primary' value="Login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p>To get a username and password plz contact to bibekanandaparhi85@gmail.com or whatsapp: 9658504617</p>
+    </form>
+  </div>
+  </div>
+{% endblock %}

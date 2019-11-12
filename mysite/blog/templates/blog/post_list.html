@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="centerstage">
+
+<div>
+    {% for post in post_list %}
+
+
+    </div>
+      <div>
+        <div class="post">
+          <div class="panel panel-success">
+            <div class="panel-heading"><br> Post Title:
+            <h5><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5></div>
+            <div class="panel-body">
+            <div class="date">
+              <span class="glyphicon glyphicon-hand-up"></span>Click Here For More
+        &nbsp&nbsp&nbsp&nbsp  <p style="color:red;"> Posted by: {{ post.author}}</p>
+      &nbsp&nbsp&nbsp&nbsp  <p> Published on: {{ post.published_date|date:"D M Y"}}</p>
+            </div>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a></div>
+        </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

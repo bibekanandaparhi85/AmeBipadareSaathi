@@ -1,0 +1,153 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class='posttitle loader'><a href="#">{{ post.title }}</a></h5></div>
+
+        {% if post.published_date %}
+            <div class="date postdate">
+                &nbsp&nbsp&nbsp&nbsp{{ post.published_date }}<div class="date postdate">
+                  &nbsp&nbsp&nbsp&nbsp POSTED BY: {{ post.author }}
+                </div>
+            </div></div>
+<div  class="panel-body">
+        {% else %}
+            <a class="btn btn-success" href="{% url 'post_publish' pk=post.pk %}">Publish</a><a style="color: green;">Click publish to public your Opinion !!</a>
+        {% endif %}
+
+      &nbsp&nbsp&nbsp&nbsp<p class='postcontent' >{{ post.text|safe|linebreaksbr }}</p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+      {% if user.is_authenticated %}
+          <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+  <hr>
+  <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+
+
+
+
+  <div class="container">
+
+
+  {% for comment in post.comments.all %}
+  <br>
+      {% if user.is_authenticated or comment.approved_comment %}
+
+              {{ comment.created_date }}
+              {% if not comment.approved_comment %}
+                  <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span style="color: red;" class="glyphicon glyphicon-remove"></span></a>
+                  <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span style="color: green;" class="glyphicon glyphicon-ok"></span></a><a style="color: green;">Make Confirm to public your comment !!</a>
+              {% endif %}
+
+          <p>{{ comment.text|safe|linebreaks }}</p>
+          <p>Comments by: <strong>{{ comment.author }}</strong></p>
+
+      {% endif %}
+  {% empty %}
+      <p>No comments posted.</p>
+  {% endfor %}<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="" id="fixed">
+  <img src="" alt="">
+</div>
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-30">
+            <h3>Our Mission</h3>
+            <p>**We are nonprofit team and continuously working on Education for every child, Feeding and Providing clothes to needy people, helping road accident victims, donating blood and many more **</p>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sm-mb-30">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="{% url 'main'%}">Home</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
+              <li><a href="{% url 'news'%}">News</a></li>
+              <li><a href="{% url 'gallery'%}">Gallery</a></li>
+              <li><a href="{% url 'videos'%}">Videos</a></li>
+              <li><a href="{% url 'post_list' %}">Opinion_Box</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
+            <h2>Follow Us</h2>
+            <p>Please Follow us on our Social Media profile in order to keep a Touchup</p>
+            <a href="https://www.facebook.com/AmeBipadareSaathi/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/amebipadaresaathi/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC8FPJ3WdipRb3amgXNn6u_g"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-four sm-mb-30">
+            <h2>Contact Us</h2>
+            <p><span class="glyphicon glyphicon-send"></span> Panikoili, Jajpur 755043<br>Once paper work is completed, Proper address we will notify you </p>
+            <p><span class="glyphicon glyphicon-phone"></span>8895045080<br> 9348387487 <br>  9937308537</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>amebipadaresaathi@gmail.com<br> rakeshranjanpanda92@gmail.com</p>
+            <p><span class="glyphicon glyphicon-tasks"></span> For website related issue :<br>bibekanandaparhi85@gmail.com</p>
+
+            <form class="" action="index.html" method="post">
+
+              <button  type="button" class="btn-outline-primary btn-sm"> <a href="{% url 'login' %}">JOIN WITH US</a></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom-text hudhd54d5">This Website is developed and maintained with <span class="glyphicon glyphicon-heart"></span> by <a href="https://www.facebook.com/bibekananda.parhi.7"><b>VIVEK</b></a> | Copyright ©2019 All rights reserved </p>
+</footer>
+
+{% endblock %}

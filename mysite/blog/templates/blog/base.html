@@ -1,0 +1,97 @@
+{% load staticfiles %}<!-- it loads static/css/blog.css -->
+<html>
+    <head>
+        <title>Ame Bipadare Saathi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+
+
+        {# Custom CSS#}
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+<!-- fix -->
+
+<body class='loader'>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top bg-custom-2" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main" >
+          <span class="sr-only"> </span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'main'%}"> <img src="{% static 'css/100.png' %}" height="50px" width="60px" alt="">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a class='navbar-brand bigbrand' href="{% url 'main'%}">Home</a></li> -->
+          <li><a href="{% url 'about'%}">ABOUT</a></li>
+          <li><a href="{% url 'news'%}">NEWS</a></li>
+          <li><a href="{% url 'gallery'%}">GALLERY</a></li>
+          <li><a href="{% url 'videos'%}">VIDEOS</a></li>
+          <li><a href="{% url 'post_list' %}">OPINION_BOX</a></li>
+
+
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+          <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-pencil">Write_a_Opinion</span></a></li>
+
+
+          <li><a href="{% url 'post_draft_list' %}"><span class="glyphicon glyphicon-file">Drafts</span></a></li>
+          <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out">LogOut</span></a></li>
+          <li><a >Welcome: {{ user.username }}  </a></li>
+          {% else %}
+          <li><a class='nav navbar-right' href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"> LogIn</span></a></li>
+          <li><a class='nav ' href="{% url 'login' %}" ><span > SignUp</span></a></li>
+
+       {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {# The actual blog posts#}
+        <!-- <div class="content container">
+            <div class="row">
+                <div class="col-md-8"> -->
+                    <div style="padding:50px 0px 0px 0px">
+                    {% block content %}
+
+
+                    {% endblock %}
+                  </div>
+                    <!-- <div class="blog_posts">
+
+                  </div>
+
+                </div> -->
+            </div>
+        </div>
+
+{# SCRIPTS#}
+
+<!-- <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> -->
+
+</body>
+</html>
